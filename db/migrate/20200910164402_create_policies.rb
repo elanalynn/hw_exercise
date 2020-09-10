@@ -1,7 +1,7 @@
 class CreatePolicies < ActiveRecord::Migration[6.0]
   def change
     create_table :policies do |t|
-      t.string :type
+      t.string :policy_type
       t.string :division
       t.integer :carrier_id
       t.integer :client_id

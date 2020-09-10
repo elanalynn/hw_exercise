@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2020_09_10_164402) do
 
   create_table "policies", force: :cascade do |t|
-    t.string "type"
+    t.string "policy_type"
     t.string "division"
     t.integer "carrier_id"
     t.integer "client_id"
