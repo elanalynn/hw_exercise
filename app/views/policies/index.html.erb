@@ -1,42 +1,44 @@
-<p id="notice"><%= notice %></p>
+<main class="policies">
+  <p id="notice"><%= notice %></p>
 
-<h1>Policies</h1>
-<table class="policy-table">
-  <thead>
-    <tr>
-      <th>Policy type</th>
-      <th>Division</th>
-      <th>Carrier ID</th>
-      <th>Client ID</th>
-      <th>Effective date</th>
-      <th>Expiration date</th>
-      <th>Written premium</th>
-      <th>Carrier policy number</th>
-      <th colspan="3">Actions</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @policies.each do |policy| %>
+  <h1>Policies</h1>
+  <table class="policy-table">
+    <thead>
       <tr>
-        <td><%= policy.policy_type %></td>
-        <td><%= policy.division %></td>
-        <td><%= policy.carrier_id %></td>
-        <td><%= policy.client_id %></td>
-        <td><%= policy.effective_date.to_formatted_s(:year_month_day) %></td>
-        <td><%= policy.expiration_date.to_formatted_s(:year_month_day) %></td>
-        <td><%= number_to_currency(policy.written_premium) %></td>
-        <td><%= policy.carrier_policy_number %></td>
-        <td><%= link_to 'Show', policy %></td>
-        <td><%= link_to 'Edit', edit_policy_path(policy) %></td>
-        <td><%= link_to 'Destroy', policy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Policy type</th>
+        <th>Division</th>
+        <th>Carrier</th>
+        <th>Client</th>
+        <th>Effective date</th>
+        <th>Expiration date</th>
+        <th>Written premium</th>
+        <th>Policy number</th>
+        <th colspan="3">Actions</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<%= will_paginate @policies %>
+    <tbody>
+      <% @policies.each do |policy| %>
+        <tr>
+          <td><%= policy.policy_type %></td>
+          <td><%= policy.division %></td>
+          <td><%= policy.carrier&.company_name %></td>
+          <td><%= policy.client_id %></td>
+          <td><%= policy.effective_date.to_formatted_s(:year_month_day) %></td>
+          <td><%= policy.expiration_date.to_formatted_s(:year_month_day) %></td>
+          <td><%= number_to_currency(policy.written_premium) %></td>
+          <td><%= policy.carrier_policy_number %></td>
+          <td><%= link_to 'Show', policy %></td>
+          <td><%= link_to 'Edit', edit_policy_path(policy) %></td>
+          <td><%= link_to 'Destroy', policy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<br>
+  <%= will_paginate @policies %>
 
-<%= link_to 'New Policy', new_policy_path %>
+  <br>
+
+  <%= link_to 'New Policy', new_policy_path %>
+</main>

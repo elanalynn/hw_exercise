@@ -2,25 +2,31 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.policy-table {
-  background-color: #eee;
-  box-shadow: 0.5rem 0.5rem 2rem #ddd;
-  padding: 1rem;
-  text-align: left;
+.policies {
+  margin: auto;
+  max-width: 1400px;
+  width: 100%;
 
-  thead th {
-    border-bottom: 2px solid #04bec3;
-    padding: 0.25rem 2rem 0 0;
-  }
+  .policy-table {
+    background-color: #eee;
+    box-shadow: 0.5rem 0.5rem 2rem #ddd;
+    padding: 1rem;
+    text-align: left;
 
-  tbody tr {
-    &:hover {
-      background-color: #04bec3;
+    thead th {
+      border-bottom: 2px solid #04bec3;
+      padding: 0.25rem 2rem 0 0;
     }
 
-    td {
-      line-height: 1.5rem;
-      padding: 0.25rem;
+    tbody tr {
+      &:hover {
+        background-color: #04bec3;
+      }
+
+      td {
+        line-height: 1.5rem;
+        padding: 0.25rem;
+      }
     }
   }
 }
