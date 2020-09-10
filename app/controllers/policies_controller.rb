@@ -4,7 +4,7 @@ class PoliciesController < ApplicationController
   # GET /policies
   # GET /policies.json
   def index
-    @policies = Policy.all
+    @policies = Policy.paginate(page: params[:page])
   end
 
   # GET /policies/1
