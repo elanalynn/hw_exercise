@@ -3,10 +3,12 @@ require 'rails_helper'
 RSpec.describe "policies/edit", type: :view do
   before(:each) do
     @policy = assign(:policy, Policy.create!(
-      type: "",
+      policy_type: "",
       division: "MyString",
       carrier_id: 1,
       client_id: 1,
+      effective_date: DateTime.new,
+      expiration_date: DateTime.new,
       written_premium: 1.5,
       carrier_policy_number: 1
     ))

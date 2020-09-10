@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Carriers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Carrier</th>
+      <th>Company name</th>
+      <th>Address 1</th>
+      <th>Address 2</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Postal code</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @carriers.each do |carrier| %>
+      <tr>
+        <td><%= carrier.carrier_id %></td>
+        <td><%= carrier.company_name %></td>
+        <td><%= carrier.address_1 %></td>
+        <td><%= carrier.address_2 %></td>
+        <td><%= carrier.city %></td>
+        <td><%= carrier.state %></td>
+        <td><%= carrier.postal_code %></td>
+        <td><%= link_to 'Show', carrier %></td>
+        <td><%= link_to 'Edit', edit_carrier_path(carrier) %></td>
+        <td><%= link_to 'Destroy', carrier, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Carrier', new_carrier_path %>

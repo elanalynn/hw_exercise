@@ -4,7 +4,7 @@ RSpec.describe "policies/index", type: :view do
   before(:each) do
     assign(:policies, [
       Policy.create!(
-        type: "Type",
+        policy_type: "Type",
         division: "Division",
         carrier_id: 2,
         client_id: 3,

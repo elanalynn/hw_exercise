@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "policies/show", type: :view do
   before(:each) do
     @policy = assign(:policy, Policy.create!(
-      type: "Type",
+      policy_type: "Type",
       division: "Division",
       carrier_id: 2,
       client_id: 3,

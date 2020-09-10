@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_10_164402) do
+ActiveRecord::Schema.define(version: 2020_09_10_203322) do
+
+  create_table "carriers", force: :cascade do |t|
+    t.integer "carrier_id"
+    t.string "company_name"
+    t.string "address_1"
+    t.string "address_2"
+    t.string "city"
+    t.string "state"
+    t.string "postal_code"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "policies", force: :cascade do |t|
     t.string "policy_type"
