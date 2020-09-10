@@ -1,0 +1,57 @@
+<%= form_with(model: policy, local: true) do |form| %>
+  <% if policy.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(policy.errors.count, "error") %> prohibited this policy from being saved:</h2>
+
+      <ul>
+        <% policy.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :type %>
+    <%= form.text_field :type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :division %>
+    <%= form.text_field :division %>
+  </div>
+
+  <div class="field">
+    <%= form.label :carrier_id %>
+    <%= form.number_field :carrier_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :client_id %>
+    <%= form.number_field :client_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :effective_date %>
+    <%= form.datetime_select :effective_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :expiration_date %>
+    <%= form.datetime_select :expiration_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :written_premium %>
+    <%= form.text_field :written_premium %>
+  </div>
+
+  <div class="field">
+    <%= form.label :carrier_policy_number %>
+    <%= form.number_field :carrier_policy_number %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

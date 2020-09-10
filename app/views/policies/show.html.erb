@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @policy.type %>
+</p>
+
+<p>
+  <strong>Division:</strong>
+  <%= @policy.division %>
+</p>
+
+<p>
+  <strong>Carrier:</strong>
+  <%= @policy.carrier_id %>
+</p>
+
+<p>
+  <strong>Client:</strong>
+  <%= @policy.client_id %>
+</p>
+
+<p>
+  <strong>Effective date:</strong>
+  <%= @policy.effective_date %>
+</p>
+
+<p>
+  <strong>Expiration date:</strong>
+  <%= @policy.expiration_date %>
+</p>
+
+<p>
+  <strong>Written premium:</strong>
+  <%= @policy.written_premium %>
+</p>
+
+<p>
+  <strong>Carrier policy number:</strong>
+  <%= @policy.carrier_policy_number %>
+</p>
+
+<%= link_to 'Edit', edit_policy_path(@policy) %> |
+<%= link_to 'Back', policies_path %>
