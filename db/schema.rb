@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_10_203322) do
+ActiveRecord::Schema.define(version: 2020_09_10_204414) do
 
   create_table "carriers", force: :cascade do |t|
     t.integer "carrier_id"
@@ -37,4 +37,5 @@ ActiveRecord::Schema.define(version: 2020_09_10_203322) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "policies", "carriers"
 end

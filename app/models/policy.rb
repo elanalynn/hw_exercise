@@ -6,6 +6,8 @@ class Policy < ApplicationRecord
   validates :written_premium, presence: true
   validates :carrier_policy_number, presence: true
 
+  belongs_to :carrier
+
   def self.import(file)
     SmarterCSV.process(file).each do |policy|
       @policy = Policy.new(policy)
