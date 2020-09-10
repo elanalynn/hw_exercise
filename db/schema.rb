@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_10_204414) do
+ActiveRecord::Schema.define(version: 2020_09_10_223116) do
 
   create_table "carriers", force: :cascade do |t|
     t.integer "carrier_id"
@@ -20,6 +20,21 @@ ActiveRecord::Schema.define(version: 2020_09_10_204414) do
     t.string "city"
     t.string "state"
     t.string "postal_code"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "clients", force: :cascade do |t|
+    t.integer "client_id"
+    t.string "client_name"
+    t.string "address"
+    t.string "city"
+    t.string "state"
+    t.string "division"
+    t.integer "major_group"
+    t.integer "industry_group"
+    t.integer "sic"
+    t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -38,4 +53,5 @@ ActiveRecord::Schema.define(version: 2020_09_10_204414) do
   end
 
   add_foreign_key "policies", "carriers"
+  add_foreign_key "policies", "clients"
 end
