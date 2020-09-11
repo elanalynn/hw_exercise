@@ -8,25 +8,27 @@
   width: 100%;
 
   .policy-table {
-    background-color: #eee;
+    background-color: #fff;
     box-shadow: 0.5rem 0.5rem 2rem #ddd;
-    padding: 1rem;
     text-align: left;
+    margin-bottom: 2rem;
+    border-collapse: collapse;
 
     thead th {
+      padding: 1rem;
       border-bottom: 2px solid #04bec3;
-      padding: 0.25rem 2rem 0 0;
     }
 
     tbody tr {
       &:hover {
-        background-color: #04bec3;
+        background-color: #82eff3;
       }
-
-      td {
-        line-height: 1.5rem;
-        padding: 0.25rem;
-      }
+    }
+    th,
+    td {
+      line-height: 1.5rem;
+      padding: 1rem;
+      border: 1px solid #04bec3;
     }
   }
 }

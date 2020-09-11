@@ -4,7 +4,13 @@ class PoliciesController < ApplicationController
   # GET /policies
   # GET /policies.json
   def index
-    @policies = Policy.paginate(page: params[:page])
+    puts DateTime.now
+    @policies = Policy
+                  .where('expiration_date > ?', DateTime.new(2018,2,3))
+                  .where('expiration_date < ?', DateTime.new(2019,2,3))
+                  .order('expiration_date DESC')
+                  .page(params[:page])
+                  .per_page(20)
   end
 
   # GET /policies/1
