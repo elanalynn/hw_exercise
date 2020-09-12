@@ -7,7 +7,13 @@
 }
 
 .submit {
-  background-color: #04bec3;
-  padding: 0.5rem 1rem;
+  background-color: #0ad4db;
+  padding: 0.5rem;
+  width: 12rem;
   border: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #04bec3;
+  }
 }

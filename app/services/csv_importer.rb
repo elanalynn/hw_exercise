@@ -1,0 +1,16 @@
+require 'smarter_csv'
+
+class CsvImporter
+  def self.import(fileName, model)
+    @logger ||= Logger.new(STDOUT)
+    filePath = ActiveStorage::Blob.service.path_for(fileName)
+    SmarterCSV.process(filePath).each do |object_data|
+      @instance = model.new(object_data)
+      if @instance.save(validate: false)
+        @logger.info "#{@instance.id} was successfully saved."
+      else
+        @instance.errors.full_messages.each { |msg| @logger.error msg }
+      end
+    end
+  end
+end

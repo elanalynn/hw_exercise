@@ -1,4 +1,4 @@
-require 'csv_importer'
+
 
 class Policy < ApplicationRecord
   validates :carrier_id, presence: true
@@ -9,8 +9,4 @@ class Policy < ApplicationRecord
 
   belongs_to :carrier
   belongs_to :client
-
-  def self.import(file)
-    CsvImporter.import(file, self)
-  end
 end
