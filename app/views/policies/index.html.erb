@@ -22,10 +22,10 @@
         <tr>
           <td><%= policy.policy_type %></td>
           <td><%= policy.division %></td>
-          <td><%= policy.carrier&.company_name %></td>
-          <td><%= policy.client&.client_name %></td>
-          <td><%= policy.effective_date.to_formatted_s(:year_month_day) %></td>
-          <td><%= policy.expiration_date.to_formatted_s(:year_month_day) %></td>
+          <td><%= policy.carrier&.company_name || "Carrier Name Missing" %></td>
+          <td><%= policy.client&.client_name || "Client Name Missing" %></td>
+          <td><%= policy.effective_date&.to_formatted_s(:year_month_day) %></td>
+          <td><%= policy.expiration_date&.to_formatted_s(:year_month_day) %></td>
           <td><%= number_to_currency(policy.written_premium) %></td>
           <td><%= policy.carrier_policy_number %></td>
           <td><%= link_to 'Show', policy %></td>

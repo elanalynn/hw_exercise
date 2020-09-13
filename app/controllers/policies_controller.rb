@@ -6,6 +6,7 @@ class PoliciesController < ApplicationController
   def index
     puts DateTime.now
     @policies = Policy
+                  .complete?
                   .where('expiration_date > ?', DateTime.new(2018,2,3))
                   .where('expiration_date < ?', DateTime.new(2019,2,3))
                   .order('expiration_date DESC')

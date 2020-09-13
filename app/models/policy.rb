@@ -1,5 +1,3 @@
-
-
 class Policy < ApplicationRecord
   validates :carrier_id, presence: true
   validates :effective_date, presence: true
@@ -9,4 +7,7 @@ class Policy < ApplicationRecord
 
   belongs_to :carrier
   belongs_to :client
+
+  scope :complete?, -> { where(complete: true) }
+  scope :incomplete?, -> { where(complete: nil) }
 end
