@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "carriers/new", type: :view do
   before(:each) do
     assign(:carrier, Carrier.new(
-      carrier_id: 1,
+      id: 1,
       company_name: "",
       address_1: "MyString",
       address_2: "MyString",

@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "carriers/edit", type: :view do
   before(:each) do
     @carrier = assign(:carrier, Carrier.create!(
-      carrier_id: 1,
+      id: 1,
       company_name: "",
       address_1: "MyString",
       address_2: "MyString",
@@ -18,7 +18,7 @@ RSpec.describe "carriers/edit", type: :view do
 
     assert_select "form[action=?][method=?]", carrier_path(@carrier), "post" do
 
-      assert_select "input[name=?]", "carrier[carrier_id]"
+      assert_select "input[name=?]", "carrier[id]"
 
       assert_select "input[name=?]", "carrier[company_name]"
 

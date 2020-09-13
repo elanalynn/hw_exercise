@@ -5,7 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>Carrier</th>
+      <th>ID</th>
       <th>Company name</th>
       <th>Address 1</th>
       <th>Address 2</th>
@@ -19,7 +19,7 @@
   <tbody>
     <% @carriers.each do |carrier| %>
       <tr>
-        <td><%= carrier.carrier_id %></td>
+        <td><%= carrier.id %></td>
         <td><%= carrier.company_name %></td>
         <td><%= carrier.address_1 %></td>
         <td><%= carrier.address_2 %></td>
