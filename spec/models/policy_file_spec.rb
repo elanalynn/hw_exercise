@@ -1,5 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe PolicyFile, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  
+  it "has a valid data attachment" do
+    @policy_file = create(:policy_file)
+    expect(@policy_file.data).to be_an_instance_of(ActiveStorage::Attached::One) 
+  end
 end
