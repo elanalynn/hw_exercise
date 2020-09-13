@@ -36,6 +36,8 @@ group :development, :test do
   gem 'pry', '~> 0.12.2'
   gem 'pry-byebug'
   gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'ffaker'
   gem 'smarter_csv'
 end
 
