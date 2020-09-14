@@ -1,5 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Carrier, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  before(:each) do
+    @carrier = create(:carrier)
+  end
+
+  it "is valid with valid attributes" do
+    expect(@carrier).to be_valid
+  end
 end

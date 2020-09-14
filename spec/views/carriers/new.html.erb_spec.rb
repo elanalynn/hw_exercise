@@ -13,23 +13,16 @@ RSpec.describe "carriers/new", type: :view do
     ))
   end
 
-  xit "renders new carrier form" do
+  it "renders new carrier form" do
     render
 
     assert_select "form[action=?][method=?]", carriers_path, "post" do
-
-      assert_select "input[name=?]", "carrier[carrier_id]"
-
+      assert_select "input[name=?]", "carrier[id]"
       assert_select "input[name=?]", "carrier[company_name]"
-
       assert_select "input[name=?]", "carrier[address_1]"
-
       assert_select "input[name=?]", "carrier[address_2]"
-
       assert_select "input[name=?]", "carrier[city]"
-
       assert_select "input[name=?]", "carrier[state]"
-
       assert_select "input[name=?]", "carrier[postal_code]"
     end
   end

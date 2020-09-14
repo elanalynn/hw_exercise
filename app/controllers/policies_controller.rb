@@ -4,7 +4,6 @@ class PoliciesController < ApplicationController
   # GET /policies
   # GET /policies.json
   def index
-    puts DateTime.now
     @policies = Policy
                   .complete?
                   .where('expiration_date > ?', DateTime.new(2018,2,3))

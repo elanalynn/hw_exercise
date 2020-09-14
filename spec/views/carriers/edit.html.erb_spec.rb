@@ -13,23 +13,16 @@ RSpec.describe "carriers/edit", type: :view do
     ))
   end
 
-  xit "renders the edit carrier form" do
+  it "renders the edit carrier form" do
     render
 
     assert_select "form[action=?][method=?]", carrier_path(@carrier), "post" do
-
       assert_select "input[name=?]", "carrier[id]"
-
       assert_select "input[name=?]", "carrier[company_name]"
-
       assert_select "input[name=?]", "carrier[address_1]"
-
       assert_select "input[name=?]", "carrier[address_2]"
-
       assert_select "input[name=?]", "carrier[city]"
-
       assert_select "input[name=?]", "carrier[state]"
-
       assert_select "input[name=?]", "carrier[postal_code]"
     end
   end
