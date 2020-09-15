@@ -1,23 +1,24 @@
+# frozen_string_literal: true
+
 class PoliciesController < ApplicationController
-  before_action :set_policy, only: [:show, :edit, :update, :destroy]
+  before_action :set_policy, only: %I[show edit update destroy]
 
   # GET /policies
   # GET /policies.json
   def index
     @policies = Policy
-                  .complete?
-                  .p_and_c
-                  .where('expiration_date > ?', DateTime.new(2018,2,3))
-                  .where('expiration_date < ?', DateTime.new(2019,2,3))
-                  .order('expiration_date DESC')
-                  .page(params[:page])
-                  .per_page(20)
+                .complete?
+                .p_and_c
+                .where('expiration_date > ?', DateTime.new(2018, 2, 3))
+                .where('expiration_date < ?', DateTime.new(2019, 2, 3))
+                .order('expiration_date DESC')
+                .page(params[:page])
+                .per_page(20)
   end
 
   # GET /policies/1
   # GET /policies/1.json
-  def show
-  end
+  def show; end
 
   # GET /policies/new
   def new
@@ -25,8 +26,7 @@ class PoliciesController < ApplicationController
   end
 
   # GET /policies/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /policies
   # POST /policies.json
@@ -69,13 +69,23 @@ class PoliciesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_policy
-      @policy = Policy.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def policy_params
-      params.require(:policy).permit(:type, :division, :carrier_id, :client_id, :effective_date, :expiration_date, :written_premium, :carrier_policy_number)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_policy
+    @policy = Policy.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def policy_params
+    params.require(:policy).permit(
+      :type,
+      :division,
+      :carrier_id,
+      :client_id,
+      :effective_date,
+      :expiration_date,
+      :written_premium,
+      :carrier_policy_number
+    )
+  end
 end

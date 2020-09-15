@@ -1,19 +1,19 @@
 require 'rails_helper'
 
-RSpec.describe "carriers/show", type: :view do
+RSpec.describe 'carriers/show', type: :view do
   before(:each) do
     @carrier = assign(:carrier, Carrier.create!(
       id: 2,
-      company_name: "",
-      address_1: "Address 1",
-      address_2: "Address 2",
-      city: "City",
-      state: "State",
-      postal_code: "Postal Code"
+      company_name: '',
+      address_1: 'Address 1',
+      address_2: 'Address 2',
+      city: 'City',
+      state: 'State',
+      postal_code: 'Postal Code'
     ))
   end
 
-  it "renders attributes in <p>" do
+  it 'renders attributes in <p>' do
     render
     expect(rendered).to match(/2/)
     expect(rendered).to match(//)

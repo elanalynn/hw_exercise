@@ -5,7 +5,7 @@ RSpec.describe Client, type: :model do
     @client = create(:client)
   end
 
-  it "is valid with valid attributes" do
+  it 'is valid with valid attributes' do
     expect(@client).to be_valid
   end
 end

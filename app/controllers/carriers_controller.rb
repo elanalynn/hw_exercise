@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class CarriersController < ApplicationController
-  before_action :set_carrier, only: [:show, :edit, :update, :destroy]
+  before_action :set_carrier, only: %I[show edit update destroy]
 
   # GET /carriers
   # GET /carriers.json
@@ -9,8 +11,7 @@ class CarriersController < ApplicationController
 
   # GET /carriers/1
   # GET /carriers/1.json
-  def show
-  end
+  def show; end
 
   # GET /carriers/new
   def new
@@ -18,8 +19,7 @@ class CarriersController < ApplicationController
   end
 
   # GET /carriers/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /carriers
   # POST /carriers.json
@@ -62,13 +62,14 @@ class CarriersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_carrier
-      @carrier = Carrier.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def carrier_params
-      params.require(:carrier).permit(:carrier_id, :company_name, :address_1, :address_2, :city, :state, :postal_code)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_carrier
+    @carrier = Carrier.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def carrier_params
+    params.require(:carrier).permit(:carrier_id, :company_name, :address_1, :address_2, :city, :state, :postal_code)
+  end
 end

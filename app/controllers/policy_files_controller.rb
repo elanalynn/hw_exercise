@@ -1,11 +1,11 @@
+# frozen_string_literal: true
+
 require 'csv_importer'
 
 class PolicyFilesController < ApplicationController
-  def index 
-  end
+  def index; end
 
-  def show 
-  end
+  def show; end
 
   def new
     @policy_file = PolicyFile.new
@@ -15,7 +15,7 @@ class PolicyFilesController < ApplicationController
     @policy_file = PolicyFile.new(policy_file_params)
     respond_to do |format|
       if @policy_file.save
-        import_policies(@policy_file.data.blob.key) 
+        import_policies(@policy_file.data.blob.key)
         format.html { redirect_to @policy_file, notice: 'PolicyFile was successfully created.' }
         format.json { render :show, status: :created, location: @policy_file }
       else
@@ -27,8 +27,8 @@ class PolicyFilesController < ApplicationController
 
   private
 
-  def import_policies(fileName)
-    CsvImporter.import(fileName, Policy)
+  def import_policies(file_name)
+    CsvImporter.import(file_name, Policy)
   end
 
   def policy_file_params

@@ -4,7 +4,7 @@ FactoryBot.define do
     address { FFaker:: AddressUS.street_address }
     city { FFaker:: AddressUS.city }
     state { FFaker:: AddressUS.state }
-    division { "A" }
+    division { 'A' }
     major_group { 23 }
     industry_group { 456 }
     sic { 7890 }

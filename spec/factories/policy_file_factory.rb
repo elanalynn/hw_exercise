@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :policy_file do
-    name { "name" }
+    name { 'name' }
     after(:build) do |policy_file|
       policy_file.data.attach(
         io: File.open(Rails.root.join('spec', 'csv', 'test_policies.csv')),

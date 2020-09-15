@@ -5,7 +5,7 @@ RSpec.describe Carrier, type: :model do
     @carrier = create(:carrier)
   end
 
-  it "is valid with valid attributes" do
+  it 'is valid with valid attributes' do
     expect(@carrier).to be_valid
   end
 end

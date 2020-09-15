@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 require 'smarter_csv'
 
 class CsvImporter
-  def self.import(fileName, model)
+  def self.import(file_name, model)
     @logger ||= Logger.new(STDOUT)
-    filePath = ActiveStorage::Blob.service.path_for(fileName)
-    SmarterCSV.process(filePath).each do |object_data|
+    file_path = ActiveStorage::Blob.service.path_for(file_name)
+    SmarterCSV.process(file_path).each do |object_data|
       @instance = model.new(object_data)
       @instance.update_attribute(:complete, true) if @instance.valid?
       if @instance.save(validate: false)

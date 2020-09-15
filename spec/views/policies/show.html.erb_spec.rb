@@ -1,10 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe "policies/show", type: :view do
+RSpec.describe 'policies/show', type: :view do
   before(:each) do
     @policy = assign(:policy, Policy.create!(
-      policy_type: "Type",
-      division: "Division",
+      policy_type: 'Type',
+      division: 'Division',
       carrier_id: 2,
       client_id: 3,
       written_premium: 4.5,
@@ -12,7 +12,7 @@ RSpec.describe "policies/show", type: :view do
     ))
   end
 
-  xit "renders attributes in <p>" do
+  xit 'renders attributes in <p>' do
     render
     expect(rendered).to match(/Type/)
     expect(rendered).to match(/Division/)

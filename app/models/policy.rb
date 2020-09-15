@@ -1,4 +1,4 @@
-
+# frozen_string_literal: true
 
 class Policy < ApplicationRecord
   EXCLUDED_POLICY_TYPES = %w(
@@ -17,7 +17,7 @@ class Policy < ApplicationRecord
     Voluntary Life/AD & D
     Voluntary Vision
     Workers Compensation
-  )
+  ).freeze
 
   validates :carrier_id, presence: true
   validates :effective_date, presence: true
